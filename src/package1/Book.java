@@ -1,22 +1,26 @@
 package package1;
 
+import java.time.LocalDate;
+
+
 public class Book {
 	
+	//attributes
 	String title;
 	int pageCount;
 	int ISBN;
 	boolean isCheckedOut;
-	int dayCheckedOut;
+	LocalDate dayCheckedOut;
 	
-	public Book(String title, int pageCount, int ISBN, boolean isCheckedOut, int dayCheckedOut) {
+	//constructor
+	public Book(String title, int pageCount, int ISBN) {
 		this.title = title;
 		this.pageCount = pageCount;
 		this.ISBN = ISBN;
-		this.isCheckedOut = isCheckedOut;
-		this.dayCheckedOut = dayCheckedOut;
+		this.isCheckedOut = false;
 	}
 	
-
+	// Getters
 	public String getTitle() {
 		return this.title;
 	}
@@ -29,35 +33,23 @@ public class Book {
 		return this.ISBN;
 	}
 
-	public boolean isCheckedOut() {
+	public boolean getIsCheckedOut() {
 		return this.isCheckedOut;
 	}
 
-	public int getDayCheckedOut() {
+	public LocalDate getDayCheckedOut() {
 		return this.dayCheckedOut;
 	}
 
 	
-	private void setTitle(String name) {
-		this.title = name;
-	}
-	
-	private void setPageCount(int pageCount) {
-		this.pageCount = pageCount;
-	}
-
-	private void setISBN(int iSBN) {
-		this.ISBN = iSBN;
-	}
-
-	private void setCheckedOut(boolean isCheckedOut, int dayCheckedOut) {
+	//Setters
+	public void setIsCheckedOut(boolean isCheckedOut, LocalDate dayCheckedOut) {
 		this.isCheckedOut = isCheckedOut;
 		setDayCheckedOut(dayCheckedOut);
 	}
 
-	private void setDayCheckedOut(int dayCheckedOut) {
+	public void setDayCheckedOut(LocalDate dayCheckedOut) {
 		this.dayCheckedOut = dayCheckedOut;
 	}
 	
-
 }
